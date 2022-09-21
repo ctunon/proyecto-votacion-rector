@@ -12,7 +12,7 @@
         android:text="Candidatura UTP"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="69dp" />
+        tools:layout_editor_absoluteY="119dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -24,7 +24,7 @@
         tools:layout_editor_absoluteY="261dp" />
 
     <EditText
-        android:id="@+id/txtCedula"
+        android:id="@+id/etxCedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteY="333dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnIngresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresar"
