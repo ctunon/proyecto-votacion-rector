@@ -7,7 +7,7 @@
     tools:context=".Votacion">
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/rb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
@@ -15,7 +15,7 @@
         tools:layout_editor_absoluteY="143dp" />
 
     <RadioButton
-        android:id="@+id/radioButton2"
+        android:id="@+id/rb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="239dp" />
 
     <RadioButton
-        android:id="@+id/radioButton3"
+        android:id="@+id/rb3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="RadioButton"
@@ -31,10 +31,18 @@
         tools:layout_editor_absoluteY="328dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnVotar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="516dp" />
+        android:text="Votar"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="562dp" />
+
+    <Button
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="562dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

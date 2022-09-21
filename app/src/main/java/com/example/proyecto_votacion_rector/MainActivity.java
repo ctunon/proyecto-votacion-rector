@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnIngresar;
     EditText etxCedula;
 
-    ArrayList<Datos> votantes;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
         btnIngresar = findViewById(R.id.btnIngresar);
         etxCedula = findViewById(R.id.etxCedula);
+
+        btnIngresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String cedula = etxCedula.getText().toString();
+
+
+
+                Intent intent =  new Intent(getApplicationContext(), Votacion.class);
+                intent.putExtra("cedula", cedula);
+                startActivity(intent);
+
+            }
+        });
 
 
 

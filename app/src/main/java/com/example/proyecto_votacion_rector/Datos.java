@@ -3,9 +3,9 @@ package com.example.proyecto_votacion_rector;
 public class Datos {
 
     private String cedula;
-    private int voto;
+    private Integer voto;
 
-    public Datos(String cedula_, int voto_){
+    public Datos(String cedula_, Integer voto_){
         cedula = cedula_;
         voto = voto_;
 
