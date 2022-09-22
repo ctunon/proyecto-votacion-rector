@@ -47,7 +47,7 @@ public class Resultados extends AppCompatActivity {
         int votosTotales = votosMartin+votosVivian+votosOmar;
 
 
-        double porcentajeVivian= ((double) votosOmar / votosTotales) * 100;
+        double porcentajeVivian= ((double) votosVivian / votosTotales) * 100;
         tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
         pbVivian.setProgress((int) porcentajeVivian);
 
