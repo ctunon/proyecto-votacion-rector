@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Votantes extends Application {
 
-    public static ArrayList<Datos> votantes;
+    public ArrayList<Datos> votantes;
 
     public Votantes() {
         votantes = new ArrayList<Datos>();

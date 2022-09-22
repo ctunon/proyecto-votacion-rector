@@ -72,8 +72,10 @@ public class Votacion extends AppCompatActivity {
                 if(rb1.isChecked()){
 
                     votantes.get(cedulaIndex).setVoto(1);
+                    System.out.println("FUNCIONO?"+ votantes.get(0).getVoto() + " "+votantes.get(0).getCedula());
                     Intent res = new Intent(getApplicationContext(), Resultados.class);
                     startActivity(res);
+
 
                 }
 
