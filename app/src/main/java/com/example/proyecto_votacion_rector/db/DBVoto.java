@@ -67,7 +67,7 @@ public class DBVoto extends DBHelper {
     }
 
 
-    /*public int Valenzuela(){
+    public int Valenzuela(){
 
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -76,7 +76,41 @@ public class DBVoto extends DBHelper {
 
         cursorVotantes = db.rawQuery("SELECT COUNT(voto) FROM " + TABLE_VOTOS + " WHERE voto = " + 1 + " LIMIT 1", null);
 
-    }*/
+        cursorVotantes.moveToFirst();
+
+        return cursorVotantes.getInt(0);
+
+    }
+
+    public int Aizpurua(){
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursorVotantes;
+
+        cursorVotantes = db.rawQuery("SELECT COUNT(voto) FROM " + TABLE_VOTOS + " WHERE voto = " + 2 + " LIMIT 1", null);
+
+        cursorVotantes.moveToFirst();
+
+        return cursorVotantes.getInt(0);
+
+    }
+
+    public int Candanedo(){
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursorVotantes;
+
+        cursorVotantes = db.rawQuery("SELECT COUNT(voto) FROM " + TABLE_VOTOS + " WHERE voto = " + 3 + " LIMIT 1", null);
+
+        cursorVotantes.moveToFirst();
+
+        return cursorVotantes.getInt(0);
+
+    }
 
 
 

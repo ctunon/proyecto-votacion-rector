@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(votante != null){
 
-                    if(votante.getVoto() != null){
+                    if(votante.getVoto() == null){
                         Intent intent =  new Intent(getApplicationContext(), Votacion.class);
                         intent.putExtra("id", votante.getId());
                         startActivity(intent);
