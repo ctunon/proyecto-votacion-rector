@@ -2,6 +2,8 @@ package com.example.proyecto_votacion_rector;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import java.util.ArrayList;
 import android.content.Intent;
@@ -9,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.proyecto_votacion_rector.db.DBHelper;
+
 import java.util.Iterator;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
         btnIngresar = findViewById(R.id.btnIngresar);
         etxCedula = findViewById(R.id.etxCedula);
+        DBHelper dbHelper = new DBHelper(MainActivity.this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        if(db!=null){
+            Toast.makeText(MainActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+        }
+
+
 
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
