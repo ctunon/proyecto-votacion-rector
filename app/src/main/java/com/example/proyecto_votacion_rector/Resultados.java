@@ -34,6 +34,10 @@ public class Resultados extends AppCompatActivity {
         tvOmar = findViewById(R.id.tvOmar);
         btnSalir =  findViewById(R.id.btnSalir);
 
+        pbVivian = findViewById(R.id.pbVivian);
+        pbOmar = findViewById(R.id.pbOmar);
+        pbMartin = findViewById(R.id.pbMartin);
+
         DBVoto dbVoto = new DBVoto(Resultados.this);
 
 
@@ -41,6 +45,10 @@ public class Resultados extends AppCompatActivity {
         int votosOmar = dbVoto.Aizpurua();
         int votosMartin = dbVoto.Candanedo();
         int votosTotales = votosMartin+votosVivian+votosOmar;
+
+        System.out.println("vivian: "+ votosVivian);
+        System.out.println("omar: "+ votosOmar);
+        System.out.println("martin: "+ votosMartin);
 
         double porcentajeVivian= ((double) votosOmar / votosTotales) * 100;
         tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
