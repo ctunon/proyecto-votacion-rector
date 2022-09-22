@@ -34,12 +34,6 @@ public class MainActivity extends AppCompatActivity {
         DBHelper dbHelper = new DBHelper(MainActivity.this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        if(db!=null){
-            Toast.makeText(MainActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
-        }
 
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
@@ -54,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(votante != null){
 
-                    System.out.print("El voto es: "+votante.getVoto());
-                    if(!votante.getVoto().equals(1) && !votante.getVoto().equals(2) && !votante.getVoto().equals(3) ){
+                    if(!votante.getVoto().equals(1) && !votante.getVoto().equals(2) && !votante.getVoto().equals(3)){
                         Intent intent =  new Intent(getApplicationContext(), Votacion.class);
                         intent.putExtra("id", votante.getId());
                         startActivity(intent);

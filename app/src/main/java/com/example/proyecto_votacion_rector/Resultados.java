@@ -46,9 +46,6 @@ public class Resultados extends AppCompatActivity {
         int votosMartin = dbVoto.Candanedo();
         int votosTotales = votosMartin+votosVivian+votosOmar;
 
-        System.out.println("vivian: "+ votosVivian);
-        System.out.println("omar: "+ votosOmar);
-        System.out.println("martin: "+ votosMartin);
 
         double porcentajeVivian= ((double) votosOmar / votosTotales) * 100;
         tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
