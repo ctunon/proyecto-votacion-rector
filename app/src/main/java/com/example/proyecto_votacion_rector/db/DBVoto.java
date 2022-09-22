@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
+import android.speech.tts.TextToSpeech;
+import android.text.Editable;
 
 import androidx.annotation.Nullable;
 
@@ -38,7 +40,7 @@ public class DBVoto extends DBHelper {
         return correcto;
     }
 
-    public Datos Verificar(String cedula){
+    public Datos Verificar(String  cedula){
 
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -46,7 +48,10 @@ public class DBVoto extends DBHelper {
         Datos votante = null;
         Cursor cursorVotantes;
 
-        cursorVotantes = db.rawQuery("SELECT * FROM " + TABLE_VOTOS + " WHERE cedula = " + cedula + " LIMIT 1", null);
+        System.out.println(cedula);
+        cursorVotantes = db.rawQuery("SELECT * FROM t_votos WHERE cedula = ?"  , new String[] {cedula.trim()});
+
+        System.out.println(cursorVotantes.moveToFirst());
 
         if (cursorVotantes.moveToFirst()) {
             votante = new Datos();
@@ -60,6 +65,7 @@ public class DBVoto extends DBHelper {
         return votante;
 
     }
+
 
     /*public int Valenzuela(){
 

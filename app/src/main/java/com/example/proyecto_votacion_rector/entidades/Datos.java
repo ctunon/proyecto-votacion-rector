@@ -2,13 +2,13 @@ package com.example.proyecto_votacion_rector.entidades;
 
 public class Datos {
 
-    private int id;
+    private Integer id;
     private String cedula;
-    private int voto;
+    private Integer voto;
 
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -24,7 +24,7 @@ public class Datos {
         this.cedula = cedula_;
     }
 
-    public int getVoto() {
+    public Integer getVoto() {
         return voto;
     }
 

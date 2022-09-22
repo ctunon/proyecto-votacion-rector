@@ -82,7 +82,7 @@ public class Votacion extends AppCompatActivity {
 
                 else if(rb2.isChecked()){
 
-                    dbVoto.Votar(id, 2);
+                    correcto=dbVoto.Votar(id, 2);
                     if(correcto){
                         Toast.makeText(Votacion.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
                         Intent res = new Intent(getApplicationContext(), Resultados.class);
@@ -95,7 +95,7 @@ public class Votacion extends AppCompatActivity {
 
                 else if(rb3.isChecked()){
 
-                    dbVoto.Votar(id, 3);
+                    correcto=dbVoto.Votar(id, 3);
                     if(correcto){
                         Toast.makeText(Votacion.this, "REGISTRO MODIFICADO", Toast.LENGTH_LONG).show();
                         Intent res = new Intent(getApplicationContext(), Resultados.class);

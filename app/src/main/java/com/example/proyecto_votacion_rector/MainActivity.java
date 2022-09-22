@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.proyecto_votacion_rector.db.DBHelper;
 import com.example.proyecto_votacion_rector.db.DBVoto;
 import com.example.proyecto_votacion_rector.entidades.Datos;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(votante != null){
 
-                    if(votante.getVoto() != 0){
+                    if(votante.getVoto() != null){
                         Intent intent =  new Intent(getApplicationContext(), Votacion.class);
                         intent.putExtra("id", votante.getId());
                         startActivity(intent);
