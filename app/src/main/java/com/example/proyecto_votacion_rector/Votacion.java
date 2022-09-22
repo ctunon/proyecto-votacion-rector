@@ -16,14 +16,17 @@ public class Votacion extends AppCompatActivity {
     RadioButton rb1, rb2, rb3;
     Button btnVotar, btnRegresar;
 
-    Votantes appState = ((Votantes) getApplicationContext());
-    ArrayList<Datos> votantes = appState.votantes;
+    Votantes anotherClass = new Votantes();
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votacion);
+
+        ArrayList<Datos> votantes = anotherClass.getList();
 
         rb1 = findViewById(R.id.rb1);
         rb2 = findViewById(R.id.rb2);
