@@ -10,39 +10,49 @@
         android:id="@+id/rb1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="36dp"
         android:text="RadioButton"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="143dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioButton
         android:id="@+id/rb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
         android:text="RadioButton"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="239dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb1" />
 
     <RadioButton
         android:id="@+id/rb3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="36dp"
         android:text="RadioButton"
-        tools:layout_editor_absoluteX="266dp"
-        tools:layout_editor_absoluteY="328dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb2" />
 
     <Button
         android:id="@+id/btnVotar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="121dp"
         android:text="Votar"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="562dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnRegresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
         android:text="Regresar"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="562dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/btnVotar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnVotar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

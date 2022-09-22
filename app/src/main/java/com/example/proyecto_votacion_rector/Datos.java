@@ -24,7 +24,7 @@ public class Datos {
         return voto;
     }
 
-    public void setVoto(int voto_){
+    public void setVoto(Integer voto_){
         voto = voto_;
     }
 

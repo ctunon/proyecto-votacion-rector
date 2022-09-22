@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnIngresar;
     EditText etxCedula;
-
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
