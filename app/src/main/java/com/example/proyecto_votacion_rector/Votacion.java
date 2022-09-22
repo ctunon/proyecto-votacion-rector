@@ -29,6 +29,7 @@ public class Votacion extends AppCompatActivity {
         rb2 = findViewById(R.id.rb2);
         rb3 = findViewById(R.id.rb3);
         btnVotar = findViewById(R.id.btnVotar);
+        btnRegresar = findViewById(R.id.btnRegresar);
 
         rb1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +63,12 @@ public class Votacion extends AppCompatActivity {
 
                 Intent intent = getIntent();
 
-                String cedula = intent.getStringExtra("cedula");
+                Integer cedulaIndex = intent.getIntExtra("cedulaIndex", 0);
 
 
                 if(rb1.isChecked()){
 
+                    votantes.get(cedulaIndex).setVoto(1);
                     Intent res = new Intent(getApplicationContext(), Resultados.class);
                     startActivity(res);
 
@@ -74,20 +76,27 @@ public class Votacion extends AppCompatActivity {
 
                 else if(rb2.isChecked()){
 
+                    votantes.get(cedulaIndex).setVoto(2);
                     Intent res = new Intent(getApplicationContext(), Resultados.class);
                     startActivity(res);
 
                 }
 
                 else if(rb3.isChecked()){
-                    
+
+                    votantes.get(cedulaIndex).setVoto(3);
                     Intent res = new Intent(getApplicationContext(), Resultados.class);
                     startActivity(res);
                 }
 
-                else {
-                    votantes.add(new Datos(cedula, null));
-                }
+            }
+        });
+
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
 
