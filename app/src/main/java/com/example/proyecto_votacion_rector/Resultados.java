@@ -37,21 +37,22 @@ public class Resultados extends AppCompatActivity {
         DBVoto dbVoto = new DBVoto(Resultados.this);
 
 
-
         int votosVivian = dbVoto.Valenzuela();
         int votosOmar = dbVoto.Aizpurua();
         int votosMartin = dbVoto.Candanedo();
         int votosTotales = votosMartin+votosVivian+votosOmar;
 
+        double porcentajeVivian= ((double) votosOmar / votosTotales) * 100;
         tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeVivian));
+        pbVivian.setProgress((int) porcentajeVivian);
 
-        double porcentajeOmar= ((double) votosOmar / votosTotales) * 100;08
-        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
-        pbOmar.setProgress((int) porcentajeVivian);
+        double porcentajeOmar= ((double) votosOmar / votosTotales) * 100;
+        tvOmar.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeOmar));
+        pbOmar.setProgress((int) porcentajeOmar);
 
         double porcentajeMartin= ((double) votosMartin / votosTotales) * 100;
-        tvVivian.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
-        pbVivian.setProgress((int) porcentajeVivian);
+        tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
+        pbMartin.setProgress((int) porcentajeMartin);
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
