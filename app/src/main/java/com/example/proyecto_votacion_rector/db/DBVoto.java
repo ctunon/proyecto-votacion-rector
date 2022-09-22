@@ -1,9 +1,13 @@
 package com.example.proyecto_votacion_rector.db;
 
 import android.content.Context;
+import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
 
 import androidx.annotation.Nullable;
+
+import com.example.proyecto_votacion_rector.entidades.Datos;
 
 public class DBVoto extends DBHelper {
 
@@ -14,7 +18,7 @@ public class DBVoto extends DBHelper {
         this.context = context;
     }
 
-    public boolean Votar(int id, String cedula, int voto) {
+    public boolean Votar(int id, int voto) {
 
         boolean correcto = false;
 
@@ -33,5 +37,42 @@ public class DBVoto extends DBHelper {
 
         return correcto;
     }
+
+    public Datos Verificar(String cedula){
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Datos votante = null;
+        Cursor cursorVotantes;
+
+        cursorVotantes = db.rawQuery("SELECT * FROM " + TABLE_VOTOS + " WHERE cedula = " + cedula + " LIMIT 1", null);
+
+        if (cursorVotantes.moveToFirst()) {
+            votante = new Datos();
+            votante.setId(cursorVotantes.getInt(0));
+            votante.setCedula(cursorVotantes.getString(1));
+            votante.setVoto(cursorVotantes.getInt(2));
+        }
+
+        cursorVotantes.close();
+
+        return votante;
+
+    }
+
+    /*public int Valenzuela(){
+
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursorVotantes;
+
+        cursorVotantes = db.rawQuery("SELECT COUNT(voto) FROM " + TABLE_VOTOS + " WHERE voto = " + 1 + " LIMIT 1", null);
+
+    }*/
+
+
+
 
 }
