@@ -14,12 +14,13 @@ import com.example.proyecto_votacion_rector.db.DBVoto;
 import com.example.proyecto_votacion_rector.entidades.Datos;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class Resultados extends AppCompatActivity {
 
     Button btnRegresar;
-    TextView tvVivian, tvMartin, tvOmar;
+    TextView tvVivian, tvMartin, tvOmar, txtEmpate;
     Button btnSalir;
     ProgressBar pbVivian, pbOmar, pbMartin;
 
@@ -32,6 +33,8 @@ public class Resultados extends AppCompatActivity {
         tvVivian = findViewById(R.id.tvVivian);
         tvMartin = findViewById(R.id.tvMartin);
         tvOmar = findViewById(R.id.tvOmar);
+        txtEmpate = findViewById(R.id.txtEmpate);
+            txtEmpate.setVisibility(View.INVISIBLE);
         btnSalir =  findViewById(R.id.btnSalir);
 
         pbVivian = findViewById(R.id.pbVivian);
@@ -44,6 +47,11 @@ public class Resultados extends AppCompatActivity {
         int votosVivian = dbVoto.Valenzuela();
         int votosOmar = dbVoto.Aizpurua();
         int votosMartin = dbVoto.Candanedo();
+
+        //Arreglos Paralelos
+        int [] arrvotos = {votosVivian, votosOmar, votosMartin};
+        String [] arrcandidatos = {"Valenzuela", "Aizpurua", "Candanedo"};
+
         int votosTotales = votosMartin+votosVivian+votosOmar;
 
 
@@ -58,6 +66,23 @@ public class Resultados extends AppCompatActivity {
         double porcentajeMartin= ((double) votosMartin / votosTotales) * 100;
         tvMartin.setText(String.format(Locale.getDefault(), "%.0f%%", porcentajeMartin));
         pbMartin.setProgress((int) porcentajeMartin);
+
+        for (int i = 0; i < arrvotos.length; i++) {
+            for (int j = i + 1 ; j < arrvotos.length; j++) {
+                if (arrvotos[i] == arrvotos[j]) {
+                    txtEmpate.setVisibility(View.VISIBLE);
+                    txtEmpate.setText("Empate entre Candidatos " + arrcandidatos[i] + " y " + arrcandidatos[j] + " a "+ arrvotos[i] + " votos");
+
+                    if (arrvotos[0] == arrvotos[1] && arrvotos [0] == arrvotos[2]){
+
+                        txtEmpate.setVisibility(View.VISIBLE);
+                        txtEmpate.setText("Empate entre Candidatos " + arrcandidatos[0] + ", " + arrcandidatos[1] + " y "+ arrcandidatos[2] + " a "+ arrvotos[i] + " votos");
+
+                    }
+
+                }
+            }
+        }
 
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
